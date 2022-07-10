@@ -1,0 +1,23 @@
+[
+    {
+        "image": "/images/movie-search-app.png",
+        "title": "React Movie Search App",
+        "description": "This project was the part of React Basics cousre, from the The Front End Career Path from Scrimba. It's a simple app built using The Movie Database API and javascript fetch API.",
+        "liveDemoLink": "https://reactmoviesearch.web.app",
+        "githubLink": "https://github.com/RahulRedfield/react-movie-search-app"
+    },
+    {
+        "image": "/images/weather-app.png",
+        "title": "Express Weather App",
+        "description": "This project is built using Node Js and Express Js. I've used Template Engine (Mustache's HBS) to built header, nav and footer to make this app dynamic.",
+        "liveDemoLink": "https://weather-app-by-rahul.herokuapp.com/",
+        "githubLink": "https://github.com/RahulRedfield/express-weather-app"
+    },
+    {
+        "image": "/images/todo-app.png",
+        "title": "React To-Do App",
+        "description": "This project was the part of React Basics cousre, from the The Front End Career Path from Scrimba. It's a simple app built using react hooks, props and more.",
+        "liveDemoLink": "https://reacttodoapp-808f6.web.app/",
+        "githubLink": "https://github.com/RahulRedfield/react-todo-app"
+    }
+]

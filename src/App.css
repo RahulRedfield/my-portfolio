@@ -1,38 +1,408 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+
+:root {
+  --cp-: #ff735c;
+}
+
+html {
+  font-size: 20px;
+
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url("../public/images/dot-grid.png");
+  color: #1d1d1d;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+section {
+  align-items: center;
+  min-height: 100vh;
+  margin-bottom: 3em;
+  padding: auto 2em;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  letter-spacing: 1px;
+  line-height: 1.5em;
+}
+
+.section--title {
+  font-size: 4rem;
+  text-align: center;
+  margin: 0 auto 1em;
+}
+
+/* Header */
+
+.section--header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: none;
+}
+
+
+.menu-span {
+  display: block;
+  width: 40px;
+  margin-bottom: .5em;
+  border-bottom: 3px solid #1d1d1d;
+}
+
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.header-nav.show {
+  transform: translateX(0%);
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 1em;
+}
+
+.nav-link {
+  color: #1d1d1d;
+  font-weight: bold;
+  transition: all 200ms;
+}
+
+.nav-link:hover {
+  color: var(--cp-);
+}
+
+.nav-toggle {
+  background: transparent;
+  position: relative;
+  top: 1em;
+  left: 0;
+  border: none;
+  z-index: 20;
+  cursor: pointer;
+  padding: 1em 1em;
+  display: none;
+  transition: transform 200ms;
+}
+
+.open.nav-toggle {
+  transform: rotate(.625turn);
+}
+
+.open .hamburger,
+.open .hamburger::after,
+.open .hamburger::before {
+  background-color: white;
+}
+
+.open .hamburger::after {
+  transform: rotate(90deg) translateX(10px);
+}
+
+.open .hamburger::before {
+  opacity: 0;
+}
+
+.hamburger {
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  background-color: #1a2e35;
+  display: block;
+  height: 4px;
+  width: 35px;
+  border-radius: 5px;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+}
+
+.hamburger::before {
+  top: 10px;
+}
+
+.hamburger::after {
+  bottom: 10px;
+}
+
+/* Intro Section */
+
+.section--intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  position: relative;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  color: var(--cp-);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.intro-box {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.intro-name {
+  font-size: 3.5rem;
+  color: var(--cp-);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.intro-image {
+  width: 50%;
+}
+
+/* Projects Section */
+
+.projects-box {
+  margin: 0 auto;
+}
+
+.project {
+  margin: 1em auto 0;
+  max-width: 500px;
+  width: 80%;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 200ms;
+  cursor: pointer;
+  box-shadow: .5px .5px 2px gray;
+}
+
+.project:hover {
+  transform: scale(1.02);
+  box-shadow: 1px 1px 10px gray;
+}
+
+.project-image {
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  width: 100%;
+  background-color: crimson;
+}
+
+.project-content {
+  padding: 1em;
+}
+
+.project-title {
+  color: var(--cp-);
+}
+
+.project-desc {
+  opacity: .9;
+}
+
+.project-links,
+.project-desc {
+  margin-top: 1em;
+}
+
+.project-link {
+  background-color: #ff735c;
+  color: white;
+  padding: .3em 1em;
+  display: inline-block;
+  border-radius: 20px;
+  margin-right: .5em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.project-link:hover {
+  background-color: white;
+  color: #ff735c;
+}
+
+
+
+/* Skills Section */
+
+.skills-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.skill-logo {
+  font-size: 4rem;
+  color: var(--cp-);
+}
+
+.skill {
+  text-align: center;
+  padding: 2em;
+}
+
+.express {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+/* Education Section */
+
+.education-box {
+  max-width: 1000px;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.education {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+.institute {
+  font-size: 2.5em;
+  color: var(--cp-);
+  margin-bottom: .5em;
+}
+
+/* Footer */
+
+.section--footer {
+  background-color: #1a2e35;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 1em;
+}
+
+.contact-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.contact-link,
+.footer-link {
   color: white;
+  padding: .5em;
 }
 
-.App-link {
-  color: #61dafb;
+.footer-link {
+  font-size: .5em;
+  margin-top: .5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width:880px) {
+
+  .section--title {
+    font-size: 3.5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .intro-box {
+    margin-top: 2em;
+    flex-direction: column;
   }
+
+  .intro-image {
+    width: 100%;
+  }
+
+  .header-nav {
+    position: absolute;
+    background-color: #ff735c;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-110%);
+    transition: all 200ms;
+  }
+
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-item {
+    margin: .7em 0;
+  }
+
+  .nav-link {
+    color: white;
+  }
+
+  .nav-link:hover {
+    color: #1a2e35;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+
 }
